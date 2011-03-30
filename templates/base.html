@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+ 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head> 
+		<title>{% block title %}Дробсервис - Дробильное оборудование | Дробилка | Продажа комплектующих к дробилкам и дробильному оборудованию | Комплектующие к дробилкам{% endblock %}</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/> 
+		<meta name="title" content="{% block seo_content %}Дробсервис - Дробильное оборудование | Дробилка | Продажа комплектующих к дробилкам и дробильному оборудованию | Комплектующие к дробилкам {% endblock %}"/> 
+		
+		<link rel="stylesheet" href="/media/css/main.css" type="text/css" media="screen"/> 
+		<link rel="stylesheet" href="/media/css/style.css" type="text/css" media="screen"/> 
+		<!--[if lte IE 6]>
+		<link rel="stylesheet" href="/media/css/style.ie.css" type="text/css" media="screen" />
+		<![endif]--> 
+		<script type="text/javascript" src="/media/js/jquery.js"></script> 
+	</head> 
+ 
+	<body> 
+		<script type="text/javascript" src="/media/js/jquery.form.js"></script> 
+		<script type="text/javascript" src="/media/js/call.js"></script> 
+		<div class="b-overtopbox-bg"></div> 
+		<div class="b-overtopbox png"> 
+			<div class="b-overtopbox-close">
+				<a href="#" class="b-overtopbox-close-a">
+					<img src="/media/images/overtopbox/close.gif" alt="Закрыть"/>
+				</a>
+			</div> 
+			<div class="b-overtopbox-logo">
+				<img src="/media/images/overtopbox/logo.gif" alt=""/>
+			</div> 
+			<div class="b-overtopbox-text"> 
+				<h1>Обратный звонок</h1> 
+				<p>Оставьте свой номер телефона и наш<br/>менеджер свяжется с вами в ближайшее время</p> 
+				<p class="ifnoerror" style="display:none;">Заявка на звонок принята.</p> 
+				<p class="iferror" style="display:none;">Внимание! Форма заполнена некорректно.</p> 
+				<p class="iftimewait" style="display:none;">Заявки принимаются по одной в 15 сек.</p> 
+			</div> 
+			<div class="b-overtopbox-form"> 
+				<form action="/Обратный-звонок" method="post"> 
+					<fieldset> 
+						<div> 
+							<label for="call_name">Имя</label> 
+							<input id="call_name" type="text" name="call_name" value=""/> 
+						</div> 
+						<div> 
+							<label for="call_phone">Номер телефона</label> 
+							<input id="call_phone" type="text" name="call_phone" value=""/> 
+						</div> 
+						<div> 
+							<button type="submit" name="call_submit">Отправить</button> 
+						</div> 
+					</fieldset> 
+				</form> 
+			</div> 
+		</div> 
+		
+ 
+		<div id="wraper-max">
+			<div id="wrap"> 
+				<div id="middle"> 
+					<div id="conteinter"> 
+						<div id="content">
+							{% block breadcrumbs %}{% endblock %}
+							{% block content %}{% endblock %}
+						</div> 
+            <div id="header-wrap">
+              <div id="header">
+                <div id="header-in"> 
+                  <div id="logo">
+                    <a href="/"><img src="/media/images/logo.gif" alt="ДробСервис"/></a>
+                  </div> 
+                  <div id="search"> 
+                    <form action="/Поиск" method="get"> 
+                      <fieldset> 
+                        <input class="input" type="text" name="q" value=""/> 
+                        <input class="button" type="submit" value="" src="/media/images/blank.gif"/> 
+                      </fieldset> 
+                    </form> 
+                  </div> 
+                  <div id="menu"> 
+                    {% block top_menu %}
+                      {% include 'main_menu.html' %}
+                    {% endblock %}
+                  </div>
+                  <div id="text"> 
+                    <p class="title">Производство запасных частей на дробильно-сортировочное оборудование</p> 
+                  </div> 
+                </div>
+              </div>
+            </div> 
+          </div> 
+					<div id="sidebar"> 					
+            {% block sidebar %}
+							{% include 'sidebar.html' %}
+						{% endblock %}
+					</div> 
+				</div> 
+			</div>
+    </div>
+    
+		<div id="footer-bg"> 
+			<div id="footer-wrap"> 
+				<div id="footer"> 
+					{% block footer %}
+            {% include 'footer.html' %}
+          {% endblock %}
+				</div> 
+			</div> 
+		</div> 
+ 
+	</body> 
+ 
+</html>

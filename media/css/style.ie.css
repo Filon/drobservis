@@ -1,0 +1,54 @@
+#wraper-max, #footer-wrap {
+	width: expression((documentElement.clientWidth||document.body.clientWidth)<=1024?'1024px':
+		( (documentElement.clientWidth||document.body.clientWidth) <= 1220 ? 'auto' : '1220px' ) );
+}
+.rblock .toptitle {
+	margin-top: -15px;
+    position: relative;
+    top: -13px;
+}
+#content {
+	padding-left: 272px;
+}
+#sidebar {
+/*
+	width: 230px;
+	margin-left: -100px;
+*/
+margin-left: -260px;
+}
+#sidebar .rightmenu li.now {
+	padding-top: 7px;
+}
+#sidebar .rightmenu li.now a {
+	color: #FFFFFF;
+}
+#sidebar .rightmenu li.now2 a {
+	color: #000000;
+	left: 0px;
+}
+#sidebar .rightmenu li.now img.left_arrow {
+	left: -30px;
+}
+.events li {
+	margin: 0px 10px 5px 0px;
+}
+.events li p.date {
+	position: relative;
+	top: 20px;
+}
+#content fieldset .checkbox, #content fieldset .radio {
+	border: 0px none;
+}
+
+.b-overtopbox {
+    position: absolute;
+    background-color: #fcf9e7;
+    background-image: none;
+}
+.b-overtopbox-bg {
+    position: absolute;
+}
+.indexcatalog {
+  margin-left: -17px;
+}
