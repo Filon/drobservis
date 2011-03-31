@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul class="indexcatalog">
+        {% for item in items %}
+            {% if forloop.counter0|divisibleby:"3" %}
+                <li class="divider">&nbsp;</li>
+            {% endif %}
+            <li>
+                <a href="/Каталог/{{ item.id }}">
+                    <img src="/media/images/placeholders/105x90.gif" alt="{{ item.name }}">
+                </a>
+                <p class="title">
+                    <a href="/Каталог/{{ item.id }}" title="{{ item.name }}">{{ item.name }}</a>
+                </p>
+                <p>{{ item.entry }}</p>
+                {% if item.childs %}
+                    <p>
+                        {% for child in item.childs %}
+                            <a href="#" title="{{ child.name }}">
+                                {{ child.name }}
+                                {% if child.draft %}- {{ child.draft }}{% endif %}
+                            </a>
+                            {% if not forloop.last %}<br>{% endif %}
+                        {% endfor %}
+                    </p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

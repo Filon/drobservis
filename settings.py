@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 
 DEBUG = True
@@ -9,13 +11,16 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+# Absolute filesystem path to the project directory.
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'drobservis',                      # Or path to database file if using sqlite3.
-        'USER': 'drobservis',                      # Not used with sqlite3.
-        'PASSWORD': 'drobservis',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+        'NAME': 'ds',                      # Or path to database file if using sqlite3.
+        'USER': 'ds',                      # Not used with sqlite3.
+        'PASSWORD': 'admxpage090',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -31,7 +36,7 @@ TIME_ZONE = 'Asia/Yekaterinburg'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 SITE_ID = 1
 
@@ -43,8 +48,15 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-# Absolute filesystem path to the project directory.
-SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+gettext = lambda s: s
+LANGUAGES = (
+    ('ru', gettext('Русский')),
+    ('en', gettext('Английский')),
+    ('kz', gettext('Казахский')),
+    ('uz', gettext('Узбекский')),
+)
+
+TRANSLATION_REGISTRY = "translation"
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
@@ -111,4 +123,6 @@ INSTALLED_APPS = (
     'mptt',
     'pages',
     'common',
+    'modeltranslation',
+    'catalog'
 )

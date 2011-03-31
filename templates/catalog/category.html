@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Childs</h1>
+    <ul>
+        {% for child in childs %}
+            <li><a href="/Каталог/{{ child.id }}">{{ child.name }}</a></li>
+        {% endfor %}
+    </ul>
+	
+	<br />
+	<br />
+	
+	<h1>{{ item.name }} - {{ item.draft }}</h1>
+	{{ item.description|safe }}
+{% endblock %}

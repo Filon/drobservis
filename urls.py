@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# encodig: utf-8
+
 from django.conf.urls.defaults import * #@UnusedWildImport
 from django.conf import settings
 
@@ -10,6 +13,7 @@ urlpatterns = patterns('',
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
     
     (r'^favicon.ico$', 'common.views.page'),
-    (r'^$', 'common.views.page'),
-    (r'', include('pages.urls')),
+    (r'^$', 'catalog.views.main'),
+    (ur'Каталог', include('catalog.urls')),
+    #(r'', include('pages.urls')),
 )
